@@ -1,0 +1,377 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SIMPLE-RESUME-CV
+%% <https://github.com/zachscrivena/simple-resume-cv>
+%% This is free and unencumbered software released into the
+%% public domain; see <http://unlicense.org> for details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INSTRUCTIONS FOR COMPILING THIS DOCUMENT ("CV.tex")
+%% TEX ---(XeLaTeX)---> PDF:
+%%
+%% Method 1: Use latexmk for fully automated document generation:
+%%   latexmk -xelatex "CV.tex"
+%%   (add the -pvc switch to automatically recompile on changes)
+%%
+%% Method 2: Use XeLaTeX directly:
+%%   xelatex "CV.tex"
+%%   (run multiple times to resolve cross-references if needed)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,10pt,oneside]{article}
+%\documentclass[letterpaper,10pt,oneside]{article}
+
+% Do not stop on errors during compilation.
+%\nonstopmode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{CV-Preamble.tex}
+
+% CV Info (to be customized).
+\newcommand{\CVTitle}{Liang-Bo Wang's CV}
+\newcommand{\CVNote}{CV compiled on {\today}}
+
+% PDF settings and properties.
+\hypersetup{
+pdftitle={\CVTitle},
+pdfauthor={John Doe},
+pdfsubject={http://liang2.tw},
+pdfcreator={XeLaTeX},
+pdfproducer={},
+pdfkeywords={},
+pdfpagemode={},
+bookmarks=true,
+unicode=true,
+bookmarksopen=true,
+pdfstartview=FitH,
+pdfpagelayout=OneColumn,
+pdfpagemode=UseOutlines,
+hidelinks,
+breaklinks}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
+
+\title{Liang-Bo Wang}
+
+\begin{subtitle}
+%\href{https://www.google.com/maps/place/17+Prime+Avenue,+Springfield,+Pennsylvania+10111,+USA}
+%{17 Prime Avenue, Apt 37, Springfield, Pennsylvania 10111, USA}
+%\par
+\href{mailto:r02945054@ntu.edu.tw}
+{r02945054@ntu.edu.tw}
+\,\BulletSymbol\,
++886-953-632-348
+\,\BulletSymbol\,
+\href{http://liang2.tw}
+{http://liang2.tw}
+\end{subtitle}
+
+\begin{body}
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+
+\section
+{Education}
+{Education}
+{PDF:Education}
+
+\href{http://www.ntu.edu.tw/english/index.html}
+{\textbf{National Taiwan University}},
+Taipei, Taiwan
+\EntryGapNoBreak
+Master of Science (M.S.) in
+\href{http://www.bebi.ntu.edu.tw/English/index.html}
+{Biomedical Electronics and Bioinformatics}
+\hfill
+\DatestampYM{2014}{01} -- Present
+\begin{detail}
+\BulletItem
+Expected to graduate in \DatestampYM{2016}{06}
+\end{detail}
+
+\EntryGapNoBreak
+Bachelor of Science (B.S.) in
+\href{http://www.ee.ntu.edu.tw/en/}
+{Electrical Engineering}
+\hfill
+\DatestampYM{2009}{09} --
+\DatestampYM{2014}{01}
+\begin{detail}
+\BulletItem
+Minor in Economics
+\end{detail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% RESEARCH EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Research Experience}
+{Research Experience}
+{PDF:ResearchExperience}
+
+\textbf{Biomedical Engineering and Bioinformatics},
+National Taiwan University
+\par
+Undergraduate Research
+\hfill
+\DatestampYM{2011}{09} --
+\DatestampYM{2012}{11}
+\begin{detail}
+\BulletItem
+Project: CMOS-based tactile sensor system for blood pressure measurement
+\end{detail}
+
+%%%%%%%%%%%%%%%%%%
+%% PUBLICATIONS %%
+%%%%%%%%%%%%%%%%%%
+
+\section
+{Publications}
+{Publications}
+{PDF:Publications}
+
+\subsection
+{Journals}
+{Journals}
+{PDF:Journals}
+
+\begin{publication}[series=pub, widest*=100]
+
+    \item Y.-P. Lai$^*$, \textbf{L.-B. Wang}$^*$, L.-C. Lai, M.-H. Tsai, T.-P. Lu, and E. Y. Chuang,
+        ``iGC–an integrated analysis package of Gene expression and Copy number alteration'',
+        \textit{(Under review)},
+        \DatestampY{2015}.
+
+    \item
+        Y. Xu, F. Zhang, Z. Jia, \textbf{L.-B. Wang}, Y. Ai, M. Lai, E. Chang,
+        ``Large Scale Tissue Histopathology Image Classification, Segmentation and Visualization via Deep Convolutional Activation Features''
+        \textit{(Under review)},
+        \DatestampY{2015}.
+
+    \item
+        \textbf{L.-B. Wang}, E. Y. Chuang, T.-P. Lu,
+        ``Identification of predictive biomarkers for ZD-6474 in lung cancer'',
+        \textit{Translational Cancer Research}, vol. 4, no. 4,
+        \DatestampYM{2015}{08}.
+
+    \item
+        C.-Y. Lee$^*$, Y.-C. Chiu$^*$, \textbf{L.-B. Wang}$^*$, Y.-L. Kuo$^*$, E. Y. Chang, L.-C. Lai, M.-H. Tsai,
+        ``Common applications of next-generation sequencing technologies in genomic research'',
+        \textit{Translational Cancer Research},
+        \DatestampYM{2013}{02}.
+
+\end{publication}
+\BigEntryGap
+
+\subsection
+{Conferences}
+{Conferences}
+{PDF:Conferences}
+
+\begin{publication}[widest*=100]  %resume=pub to resume the publication counter
+
+    \item
+        \textbf{L.-B. Wang}, S.-Y. Dai, T.-P. Lu, L.-C. Lai, M.-H. Tsai, E. Y. Chuang,
+        ``Nextbiopy: Utilities for next-generation sequencing data processing'',
+        \textit{9th Asian Pacific Conference on Medical and Biological Engineering (APCMBE)},
+        \DatestampYM{2014}{10}.
+
+    \item
+        C.-Y. Lee$^*$, \textbf{L.-B. Wang}$^*$, M.-H. Tsai, L.-C. Lai, E. Y. Chuang,
+        ``Identification of novel miRNAs in breast data of the next generation sequencing using miRDeep2 and Galaxy'',
+        \textit{AACR 2013},
+        \DatestampYM{2013}{04}.
+
+    \item
+        Y.-C. Lin, C.-J. Hsieh, \textbf{L.-B. Wang} (presenter), J.-C. Liou, W.-C. Tian,
+        ``CMOS MEMS metal-based tactile sensors development'',
+        \textit{AVS 59th International Symposium \& Exhibition},
+        \DatestampYM{2012}{10}.
+
+    \item
+        C.-T. Sun, Y.-C. Lin, C.-J. Hsieh, J.-C. Liou, \textbf{L.-B. Wang,} W.-C. Tian,
+        ``A linear-response CMOS-MEMS capacitive tactile sensor'',
+        \textit{IEEE Sensors 2012},
+        \DatestampYM{2012}{10}.
+
+\end{publication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACADEMIC HONORS & AWARDS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Academic Honors\newline
+\& Awards}
+{Academic Honors \& Awards}
+{PDF:AcademicHonorsAwards}
+
+Dean's List,
+Fall 2002 through Spring 2005,
+\hfill
+\DatestampY{2002} --
+\DatestampY{2005}
+\par
+Science College
+\begin{detail}
+For attaining a semester GPA of at least 3.75.
+\end{detail}
+
+\EntryGap
+Undergraduate Researcher Award,
+Science College
+\hfill
+\DatestampYMD{2005}{05}{15}
+\begin{detail}
+For outstanding scientific contributions in the fields of lasers and climate change.
+\end{detail}
+
+\EntryGap
+International Science Scholarship,
+Global Science Foundation
+\hfill
+\DatestampYMD{2001}{12}{10}
+\begin{detail}
+Provides full sponsorship with stipend for undergraduate studies.
+One of 42 awardees in the world.
+\end{detail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OTHER HONORS & AWARDS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Other Honors\newline
+\& Awards}
+{Other Honors \& Awards}
+{PDF:OtherHonorsAwards}
+
+Chess Tournament,
+First Prize,
+First American University
+\hfill
+\DatestampYMD{2007}{03}{10}
+\begin{detail}
+Awarded at the Tenth Annual Chess Tournament held during Alumni Weekend.
+\end{detail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PROFESSIONAL AFFILIATIONS & ACTIVITIES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Professional Affiliations\newline
+\& Activities}
+{Professional Affiliations \& Activities}
+{PDF:ProfessionalAffiliationsActivities}
+
+\href{http://www.example.com/my-society}
+{\textbf{Society of Professional Earth Scientists}},
+New York, USA
+\par
+Member
+\hfill
+\DatestampY{2009} --
+Present
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% CAMPUS ACTIVITIES %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Campus Activities}
+{Campus Activities}
+{PDF:CampusActivities}
+
+% \href{http://www.example.com/my-club}
+% {\textbf{First Volunteers Club}},
+% First American University
+% \par
+% President
+% \hfill
+% \DatestampYMD{2006}{08}{15} --
+% \DatestampYMD{2007}{08}{15}
+% \begin{detail}
+% \BulletItem
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+% \BulletItem
+% Curabitur vitae laoreet velit, vel ultricies est. Nam nec elit ac ante facilisis ultrices.
+% \BulletItem
+% Integer sit amet turpis dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at orci eu leo vulputate finibus sed et sem.
+% \BulletItem
+% Suspendisse volutpat sapien et mi cursus, gravida ornare mauris sollicitudin.
+% \end{detail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OTHER WORK EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section
+{Other Work\newline
+Experience}
+{Other Work Experience}
+{PDF:OtherWorkExperience}
+
+% \href{http://www.example.com/my-company}
+% {\textbf{Alpha Engineering Firm}},
+% Oakland, Ohio, USA
+% \par
+% Project Officer,
+% Research \& Development Division
+% \hfill
+% \DatestampYMD{2007}{10}{15} --
+% \DatestampYMD{2008}{01}{15}
+% \begin{detail}
+% \BulletItem
+% Nullam venenatis egestas nisl eget elementum.
+% \BulletItem
+% Nulla finibus justo vel turpis efficitur, non lacinia orci maximus. Proin rhoncus, felis vel hendrerit lacinia, enim ipsum ultricies massa, sit amet interdum nisi massa sit amet justo.
+% \BulletItem
+% Etiam vitae eros mollis, consectetur quam quis, molestie massa.
+% \end{detail}
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\section
+{Programming Skills}
+{Programming Skills}
+{PDF:Programming Skills}
+
+Python (both scientific and web stack),
+R,
+\LaTeX,
+C, SQL
+
+\end{body}
+
+%%%%%%%%%%%
+% CV NOTE %
+%%%%%%%%%%%
+
+\begin{flushright}
+\scriptsize%
+[\textit{\CVNote}]%
+\hspace{2.0mm}\null
+\end{flushright}
+
+\label{LastPage}~
+\end{document}
