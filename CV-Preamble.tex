@@ -10,10 +10,10 @@
 
 % Geometry package for page margins.
 \usepackage[
-left=0.70in,
-right=0.70in,
-top=0.70in,
-bottom=0.55in,
+left=1cm,
+right=1cm,
+top=1cm,
+bottom=0.5cm,
 nohead,
 includefoot]{geometry}
 
@@ -33,12 +33,16 @@ includefoot]{geometry}
 % The "Tinos" fonts are released under the Apache License Version 2.0,
 % and can be downloaded for free at <http://www.fontsquirrel.com/fonts/tinos>.
 % Symbol table: <http://www.fileformat.info/info/unicode/font/tinos/grid.htm>
-\setmainfont
-[Path=./Fonts/Tinos/,
-ItalicFont=Tinos-Italic,
-BoldFont=Tinos-Bold,
-BoldItalicFont=Tinos-BoldItalic]
-{Tinos-Regular.ttf}
+%\setmainfont
+%[Path=./Fonts/Tinos/,
+%ItalicFont=Tinos-Italic,
+%BoldFont=Tinos-Bold,
+%BoldItalicFont=Tinos-BoldItalic]
+%{Tinos-Regular.ttf}
+
+% Use Times New Roman as default font
+\usepackage{mathptmx}
+\setmainfont{Times New Roman}
 
 % Sans-serif font: Switched to "Tinos".
 \renewcommand{\sffamily}{\rmfamily}
@@ -156,9 +160,9 @@ BoldItalicFont=FreeSerifBoldItalic]
 \renewcommand{\title}[1]{%
 \pdfbookmark[1]{#1}{#1}%
 \par\begin{center}%
-\par\begin{Huge}%
+\par\begin{LARGE}%
 \textbf{#1}%
-\par\end{Huge}%
+\par\end{LARGE}%
 \par\end{center}%
 \par\vspace{-1.75em}\par}
 
@@ -167,38 +171,38 @@ BoldItalicFont=FreeSerifBoldItalic]
 {\par\begin{center}%
 \par\begin{footnotesize}}
 {\par\end{footnotesize}%
-\par\end{center}\par}
+\par\end{center}\vspace{-1em}\par}
 
 % Macro: body (rest of the document).
 \newenvironment{body}
 {\par\vspace{-1em}\par
-\begin{longtable}{p{0.15\textwidth}p{0.80\textwidth}}}
+\begin{longtable}{@{}p{0.2\columnwidth}@{\extracolsep{0.5em}}p{0.75\columnwidth}@{}}}
 {\par\end{longtable}\par}
 
 % Macro: section (new section for Education, Research Experience, etc.).
-\renewcommand{\section}[3]{\\[-1em]\pdfbookmark[2]{#2}{#3}\\%
-{\fontsize{9pt}{11pt}\selectfont\bfseries\raggedright%
+\renewcommand{\section}[3]{\\[-0.7em]\pdfbookmark[2]{#2}{#3}\\%
+{\fontsize{11pt}{16pt}\selectfont\bfseries\raggedright%
 \MakeUppercase{#1}}&}
 
 % Macro: subsection.
 \renewcommand{\subsection}[3]{\par~\vskip-\baselineskip%
 \pdfbookmark[3]{#2}{#3}\par%
-{\fontsize{8pt}{9.6pt}\selectfont\bfseries\raggedright%
+{\fontsize{11pt}{16pt}\selectfont\bfseries\raggedright%
 \MakeUppercase{#1}}%
 \vspace{0.1em}}
 
 % Macro: BigEntryGap (big vertical gap between entries in the same section).
-\newcommand{\BigEntryGap}{\\[-0.5em]~&}
+\newcommand{\BigEntryGap}{\\[-0.4em]~&}
 \newcommand{\BigEntryGapNoBreak}{\par\vspace{0.7em}\par}
 
 % Macro: EntryGap (vertical gap between entries in the same section).
-\newcommand{\EntryGap}{\\[-0.8em]~&}
+\newcommand{\EntryGap}{\\[-0.7em]~&}
 \newcommand{\EntryGapNoBreak}{\par\vspace{0.4em}\par}
 
 % Macro: detail (text in smaller font under an entry).
 \newenvironment{detail}
 %{\par\begingroup\fontsize{8.6}{10.3}\selectfont}
-{\par\begingroup\fontsize{9.5}{10.5}\selectfont}
+{\par\begingroup\fontsize{12}{14}\selectfont}
 {\par\endgroup\par}
 
 % Macro: BulletItem.
