@@ -14,3 +14,10 @@ CV: $(CV_LATEST).tex
 clean:
 	rm $(CV_LATEST).{aux,log,out}
 
+install:
+	sudo tlmgr install \
+		hypernat hyphenat \
+		enumitem datetime fmtcount \
+		rsfs \
+		biber biblatex \
+		pgfopts logreq xstring
