@@ -103,7 +103,13 @@
     \vspace{-\smallskipamount}]
 
 % Footer
-\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\fancyfoot[R]{
+    \small
+    Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[L]{
+    \small
+    \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\today}}{}
+}
 
 % Lists
 \newcommand{\outerlist}[1]{
