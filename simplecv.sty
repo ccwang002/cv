@@ -56,6 +56,10 @@
 % Hyperlinks
 \newcommand{\link}[2]{\href{#1}{#2}}
 
+% Date and time format
+\usepackage[yyyymmdd,24hr]{datetime}
+\renewcommand{\dateseparator}{-}
+
 % Define colors
 \definecolor{color-text}{gray}{0.10}    % light black
 \definecolor{color-detail}{gray}{0.40}  % dark gray
@@ -129,7 +133,9 @@
     Page \thepage\ of \pageref{LastPage}}
 \fancyfoot[L]{
     \small
-    \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\today}}{}
+    \ifthenelse{\value{page}=\pageref{LastPage}}
+    {Last updated: {\today}}
+    {}
 }
 
 % Lists
