@@ -62,8 +62,8 @@
     \vspace*{\fill}
     \Huge \textcolor{color-title}{#1}
     \end{minipage}%
-    % make sure there is no space
-    % (ref: https://tex.stackexchange.com/a/114521)
+    % Make sure there is paragraph break between two minipages
+    % Ref: https://tex.stackexchange.com/a/114521
     \begin{minipage}[t]{0.4\textwidth}
     \begin{flushright}
     #2
@@ -81,6 +81,8 @@
     \vspace{5mm}\\
     #2
     \end{minipage}%
+    % Align the image at the bottom
+    % Ref: https://tex.stackexchange.com/a/132240
     \begin{minipage}[t][][b]{0.4\textwidth}
     \begin{flushright}
     \includegraphics[width=1.5in,keepaspectratio]{#3}
