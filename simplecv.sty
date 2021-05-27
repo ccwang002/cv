@@ -12,6 +12,26 @@
 \usepackage[english]{babel}                 % Language styles
 \usepackage{graphicx}                       % Importing graphics
 
+\usepackage{fontspec}                       % Unicode fonts
+\setmainfont{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
+]
+\newfontfamily\lightmainfont{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Light, ItalicFont=*-LightIt,
+    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
+]
+\setsansfont{SourceSans3}[
+    Path=./fonts/source-sans/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
+]
+
 % % Chinese
 % \usepackage{xeCJK}
 % \setCJKmainfont{BabelStone Han}
