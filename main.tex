@@ -8,17 +8,19 @@
     maxbibnames=6,
     sorting=ydnt
 ]
+% use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
 \bibliography{papers}
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
 % More predefined colors can be found in https://en.wikibooks.org/wiki/LaTeX/Colors
 % Set theme color by RGB hex values
+% \def\theme{006795}  % MidnightBlue
 \def\theme{08467a}
-% \def\theme{006795}    % MidnightBlue
 
 \usepackage{simplecv}
 
+% Configure extra PDF metadata
 \hypersetup{
     pdftitle={Liang-Bo Wang's CV},
     pdfauthor={Liang Bo Wang},
@@ -38,8 +40,11 @@
     GitHub: \href{https://github.com/ccwang002}{ccwang002}
 }
 
-% \headingphoto{Liang-Bo Wang}{
+% Heading with photo
+% \headingphoto{Liang-Bo Wang}
+% {
 %     Email: \email{liang-bo.wang@wustl.edu} \\
+%     Mobile: +1 (314) 285-8111 \\
 %     Website: \href{https://blog.liang2.tw}{liang2.tw} \\
 %     GitHub: \href{https://github.com/ccwang002}{@ccwang002}
 % }{profile_photo.jpg}
@@ -53,9 +58,11 @@
 
 % Page Two
 \input{./sections/teaching.tex}
-\sidebyside
-    {\input{./sections/skills.tex}}
-    {\input{./sections/languages.tex}}
+\begin{multicols}{2}
+    \input{./sections/skills.tex}
+    \columnbreak
+    \input{./sections/languages.tex}
+\end{multicols}
 \input{./sections/projects.tex}
 \input{./sections/awards.tex}
 \input{./sections/volunteering.tex}

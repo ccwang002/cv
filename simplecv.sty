@@ -32,6 +32,9 @@
     BoldFont=*-Bold, BoldItalicFont = *-BoldIt
 ]
 
+% Enable this to use sans-serif by default instead of serif
+% \renewcommand{\familydefault}{\sfdefault}
+
 % % Chinese
 % \usepackage{xeCJK}
 % \setCJKmainfont{BabelStone Han}
@@ -84,6 +87,7 @@
     \vspace*{\fill}
     % \mainlightfont \bfseries
     \Huge \textcolor{color-title}{#1}
+    \vspace{5mm}
     \end{minipage}%
     % Make sure there is paragraph break between two minipages
     % Ref: https://tex.stackexchange.com/a/114521
@@ -97,28 +101,28 @@
 % Photo heading
 \newcommand{\headingphoto}[3]{
     \begin{minipage}[t]{0.60\textwidth}
-    \begin{dummyenv}
+
     \vspace*{\fill}
+    \begin{dummyenv}
     \Huge \textcolor{color-title}{#1}
     \end{dummyenv}
-    \vspace{5mm}\\
+
+    \vspace{1.5\baselineskip}
     #2
     \end{minipage}%
     % Align the image at the bottom
     % Ref: https://tex.stackexchange.com/a/132240
     \begin{minipage}[t][][b]{0.4\textwidth}
     \begin{flushright}
-    \includegraphics[width=1.5in,keepaspectratio]{#3}
+    \includegraphics[height=4cm,keepaspectratio]{#3}
     \end{flushright}
     \end{minipage}
 }
 
-% Two-columns
-\newcommand{\sidebyside}[2]{
-    \begin{multicols}{2}
-    #1 \columnbreak
-    #2 \end{multicols}
-}
+% Multi-columns (multicol) settings
+\setlength{\columnsep}{12pt}  % default space between columns
+\setlength{\multicolsep}{0.5\baselineskip plus 2pt minus 1.5pt}  % default vertical margin
+
 
 % Section titles
 \titleformat{\section}{
@@ -169,20 +173,12 @@
 }
 
 % List items
-\newcommand{\detail}{\color{color-detail}}
-
 \newcommand{\entrymid}[3]{
     \item #1 \hfill #2\\
     \textit{#3}
 }
 
-\newcommand{\entrybig}[5][]
-{\item[#1]
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    #2 & #3 \\
-    #4 & #5 \\
-    \end{tabular*}%
-}
+\newcommand{\detail}{\color{color-detail}}
 
 % Fill year
 \newcommand{\fillyear}[1]{\phantom{#1}}
