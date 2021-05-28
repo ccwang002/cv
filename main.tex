@@ -1,7 +1,14 @@
 \documentclass[letterpaper,11pt]{article}
 
-% Choose bibliography style for formatting list of publications
-\usepackage[style=nature,url=false,doi=true,maxbibnames=6,sorting=ydnt]{biblatex}
+% Choose bibliography style for formatting list of publication
+\usepackage{biblatex}[
+    style=nature,
+    url=false,
+    doi=true,
+    maxbibnames=6,
+    sorting=ydnt
+]
+\renewcommand*{\bibfont}{\normalfont\small}
 \bibliography{papers}
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
