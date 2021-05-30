@@ -13,5 +13,9 @@
             ],
             "env": {}
         }
-    ]
+    ],
+    "latex-workshop.bibtex-format.sortby": [
+        "year-desc"
+    ],
+    "latex-workshop.bibtex-format.trailingComma": true
 }
