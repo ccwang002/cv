@@ -2,7 +2,6 @@
 
 % Packages
 \usepackage[margin=1.5cm]{geometry}         % Margin
-\usepackage[hidelinks]{hyperref}            % Hyperlinks
 \usepackage{titlesec}                       % Title formatting
 \usepackage{multicol}                       % Multiple columns
 \usepackage[usenames,dvipsnames]{xcolor}    % Coloring
@@ -42,6 +41,27 @@
 % \usepackage{hyphenat}
 % \babelfont{rm}{Droid Sans}
 
+% Quotes
+\usepackage[autostyle,english=american]{csquotes}
+\MakeOuterQuote{"}
+
+% Bibliography and styling
+\usepackage{biblatex}[
+    backend=biber,
+    style=nature,
+    url=false,
+    doi=true,
+    maxcitenames=10,
+    sorting=ydnt
+]
+
+% use small font for the bibliography
+\renewcommand*{\bibfont}{\normalfont\small}
+
+% Hyperlinks
+\newcommand{\link}[2]{\href{#1}{#2}}
+\usepackage[hidelinks]{hyperref}            % Hyperlinks
+
 % Styling
 \pagestyle{fancy}
 \fancyhf{}
@@ -51,17 +71,6 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0pt}
-
-% Quotes
-\usepackage[autostyle,english=american]{csquotes}
-\MakeOuterQuote{"}
-
-% Hyperlinks
-\newcommand{\link}[2]{\href{#1}{#2}}
-
-% Date and time format
-\usepackage[yyyymmdd,24hr]{datetime}
-\renewcommand{\dateseparator}{-}
 
 % Define colors
 \definecolor{color-text}{gray}{0.10}    % light black
@@ -74,6 +83,10 @@
 \newcommand{\globalcolor}[1]{\color{#1}\global\let\default@color\current@color}
 \makeatother
 \AtBeginDocument{\globalcolor{color-text}}
+
+% Date and time format
+\usepackage[yyyymmdd,24hr]{datetime}
+\renewcommand{\dateseparator}{-}
 
 % Shorthand
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}

@@ -1,17 +1,5 @@
 \documentclass[letterpaper,11pt]{article}
 
-% Choose bibliography style for formatting list of publication
-\usepackage{biblatex}[
-    style=nature,
-    url=false,
-    doi=true,
-    maxcitenames=10,
-    sorting=ydnt
-]
-% use small font for the bibliography
-\renewcommand*{\bibfont}{\normalfont\small}
-\bibliography{papers}
-
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
 % More predefined colors can be found in https://en.wikibooks.org/wiki/LaTeX/Colors
 % Set theme color by RGB hex values
@@ -19,6 +7,9 @@
 \def\theme{08467a}
 
 \usepackage{simplecv}
+
+% Define the bibliography path
+\bibliography{papers}
 
 % Configure extra PDF metadata
 \hypersetup{
