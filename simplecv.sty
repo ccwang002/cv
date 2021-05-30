@@ -46,14 +46,17 @@
 \MakeOuterQuote{"}
 
 % Bibliography and styling
-\usepackage{biblatex}[
+\usepackage[
     backend=biber,
-    style=nature,
+    style=numeric-comp,
+    sorting=ydnt,
+    date=year,
+    isbn=false,
     url=false,
     doi=true,
-    maxcitenames=10,
-    sorting=ydnt
-]
+    minnames=1,
+    maxnames=9
+]{biblatex}
 
 % use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
