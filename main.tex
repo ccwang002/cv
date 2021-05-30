@@ -1,12 +1,14 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,11pt]{simple-cv}
 
-% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
-% More predefined colors can be found in https://en.wikibooks.org/wiki/LaTeX/Colors
+% Override theme color
 % Set theme color by RGB hex values
-% \def\theme{006795}  % MidnightBlue
-\def\theme{08467a}
+\definecolor{color-title}{HTML}{08467a}
+% Use predefined colors in https://en.wikibooks.org/wiki/LaTeX/Colors
+% options: black, RedViolet, ForestGreen, MidnightBlue
+% \colorlet{color-title}{MidnightBlue}
 
-\usepackage{simplecv}
+% Show overfull hbox
+\setlength\overfullrule{5pt}
 
 % Define the bibliography path
 \addbibresource{papers.bib}

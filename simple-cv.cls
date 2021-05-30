@@ -1,20 +1,30 @@
-\ProvidesPackage{simplecv}
+% Identification
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{simple-cv}[2021/05/30 Simple CV class]
+
+% Class options
+% Inherit options of article
+\DeclareOption*{%
+  \PassOptionsToClass{\CurrentOption}{article}
+}
+\ProcessOptions\relax
+\LoadClass{article}
 
 % Packages
-\usepackage[margin=1.5cm]{geometry}         % Margin
-\usepackage{titlesec}                       % Title formatting
-\usepackage{multicol}                       % Multiple columns
-\usepackage[usenames,dvipsnames]{xcolor}    % Coloring
-\usepackage{enumitem}                       % List customization
-\usepackage{lastpage}                       % Page numbering
-\usepackage{fancyhdr}                       % Footers
-\usepackage[english]{babel}                 % Language styles
-\usepackage{graphicx}                       % Importing graphics
+\RequirePackage[margin=1.5cm]{geometry}         % Margin
+\RequirePackage{fancyhdr}                       % Header and footer formatting
+\RequirePackage{titlesec}                       % Title formatting
+\RequirePackage{multicol}                       % Multiple columns
+\RequirePackage[usenames,dvipsnames]{xcolor}    % Coloring
+\RequirePackage{enumitem}                       % List customization
+\RequirePackage{lastpage}                       % Page numbering
+\RequirePackage[english]{babel}                 % Language styles
+\RequirePackage{graphicx}                       % Importing graphics
 
-% Define color theme
+% Define colors
+\definecolor{color-title}{gray}{0.10}   % theme color
 \definecolor{color-text}{gray}{0.10}    % light black
 \definecolor{color-detail}{gray}{0.40}  % dark gray
-\definecolor{color-title}{HTML}{\theme} % theme color
 
 % Set default text color
 % Ref: https://tex.stackexchange.com/a/26560
@@ -25,7 +35,8 @@
 \makeatother
 \AtBeginDocument{\globalcolor{color-text}}
 
-\usepackage{fontspec}                       % Unicode fonts
+% Unicode fonts
+\RequirePackage{fontspec}
 \setmainfont{SourceSerif4}[
     Path=./fonts/source-serif/,
     Ligatures=TeX,
@@ -49,11 +60,11 @@
 % \renewcommand{\familydefault}{\sfdefault}
 
 % Quotes
-\usepackage[autostyle,english=american]{csquotes}
+\RequirePackage[autostyle,english=american]{csquotes}
 \MakeOuterQuote{"}
 
 % Bibliography and styling
-\usepackage[
+\RequirePackage[
     backend=biber,
     style=numeric-comp,
     sorting=ydnt,
@@ -72,21 +83,39 @@
 \setlength{\biblabelsep}{\labelsep}
 
 % Hyperlinks
-\newcommand{\link}[2]{\href{#1}{#2}}
-\usepackage[hidelinks]{hyperref}            % Hyperlinks
-
-% Styling
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\RequirePackage[hidelinks]{hyperref}
 \urlstyle{same}
+\newcommand{\link}[2]{\href{#1}{#2}}
+
+% Page styling
 \raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0pt}
+
+% Header and footer styling (fancyhdr)
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[R]{
+    \small
+    Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[L]{
+    \small
+    \ifthenelse{\value{page}=\pageref{LastPage}}
+    {Last updated: {\today}}
+    {}
+}
+
+% Section title styling (titlesec)
+\titleformat{\section}
+    {\scshape\raggedright\Large\color{color-title}}
+    {}
+    {0em}
+    {}
+    [\color{color-title}\titlerule\vspace{-\smallskipamount}]
 
 % Date and time format
-\usepackage[yyyymmdd,24hr]{datetime}
+\RequirePackage[yyyymmdd,24hr]{datetime}
 \renewcommand{\dateseparator}{-}
 
 % Shorthand
@@ -137,23 +166,6 @@
 \setlength{\columnsep}{12pt}  % default space between columns
 \setlength{\multicolsep}{0.5\baselineskip plus 2pt minus 1.5pt}  % default vertical margin
 
-
-% Section titles
-\titleformat{\section}{
-    \scshape\raggedright\Large\color{color-title}}{}{0em}{}[\color{color-title}\titlerule
-    \vspace{-\smallskipamount}]
-
-% Footer
-\fancyfoot[R]{
-    \small
-    Page \thepage\ of \pageref{LastPage}}
-\fancyfoot[L]{
-    \small
-    \ifthenelse{\value{page}=\pageref{LastPage}}
-    {Last updated: {\today}}
-    {}
-}
-
 % Lists
 \newlist{outerlist}{itemize}{2}
 \setlist[outerlist]{
@@ -171,12 +183,6 @@
     itemsep=2pt,
     % first=\small
 }
-
-% \newlist{orderedouterlist}{enumerate}{1}
-% \setlist[orderedouterlist]{
-%     leftmargin=*,
-%     first=\small
-% }
 
 \newlist{innerlist}{itemize}{1}
 \setlist[innerlist]{
