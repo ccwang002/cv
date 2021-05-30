@@ -11,6 +11,20 @@
 \usepackage[english]{babel}                 % Language styles
 \usepackage{graphicx}                       % Importing graphics
 
+% Define color theme
+\definecolor{color-text}{gray}{0.10}    % light black
+\definecolor{color-detail}{gray}{0.40}  % dark gray
+\definecolor{color-title}{HTML}{\theme} % theme color
+
+% Set default text color
+% Ref: https://tex.stackexchange.com/a/26560
+\makeatletter
+\newcommand{\globalcolor}[1]{
+    \color{#1}\global\let\default@color\current@color%
+}
+\makeatother
+\AtBeginDocument{\globalcolor{color-text}}
+
 \usepackage{fontspec}                       % Unicode fonts
 \setmainfont{SourceSerif4}[
     Path=./fonts/source-serif/,
@@ -57,9 +71,10 @@
     minnames=1,
     maxnames=9
 ]{biblatex}
-
 % use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
+
+\DeclareFieldFormat{addendum}{\lightmainfont\color{color-title}\bfseries\itshape (#1)}
 
 % Hyperlinks
 \newcommand{\link}[2]{\href{#1}{#2}}
@@ -74,18 +89,6 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0pt}
-
-% Define colors
-\definecolor{color-text}{gray}{0.10}    % light black
-\definecolor{color-detail}{gray}{0.40}  % dark gray
-\definecolor{color-title}{HTML}{\theme} % theme color
-% \colorlet{color-title}{\theme}          % theme color by name
-
-% Set text color
-\makeatletter
-\newcommand{\globalcolor}[1]{\color{#1}\global\let\default@color\current@color}
-\makeatother
-\AtBeginDocument{\globalcolor{color-text}}
 
 % Date and time format
 \usepackage[yyyymmdd,24hr]{datetime}
