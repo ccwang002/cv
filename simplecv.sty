@@ -73,8 +73,10 @@
 ]{biblatex}
 % use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
-
+% style the custom notes (addendum in the biblatex entry) at the end of each reference
 \DeclareFieldFormat{addendum}{\lightmainfont\color{color-title}\bfseries\itshape (#1)}
+% change the horizontal distance between the numeric label and the reference
+\setlength{\biblabelsep}{\labelsep}
 
 % Hyperlinks
 \newcommand{\link}[2]{\href{#1}{#2}}
