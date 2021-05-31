@@ -12,16 +12,12 @@
 
 % Packages
 \RequirePackage[margin=1.5cm]{geometry}         % Margin
-\RequirePackage{fancyhdr}                       % Header and footer formatting
-\RequirePackage{titlesec}                       % Title formatting
-\RequirePackage{multicol}                       % Multiple columns
-\RequirePackage[usenames,dvipsnames]{xcolor}    % Coloring
-\RequirePackage{enumitem}                       % List customization
 \RequirePackage{lastpage}                       % Page numbering
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
 
 % Define colors
+\RequirePackage[usenames,dvipsnames]{xcolor}
 \definecolor{color-title}{gray}{0.10}   % theme color
 \definecolor{color-text}{gray}{0.10}    % light black
 \definecolor{color-detail}{gray}{0.40}  % dark gray
@@ -36,7 +32,7 @@
 \AtBeginDocument{\globalcolor{color-text}}
 
 % Unicode fonts
-\RequirePackage{fontspec}
+\RequirePackage{fontspec}                       % Fonts and Unicode
 \setmainfont{SourceSerif4}[
     Path=./fonts/source-serif/,
     Ligatures=TeX,
@@ -55,43 +51,15 @@
     UprightFont=*-Regular, ItalicFont=*-It,
     BoldFont=*-Bold, BoldItalicFont = *-BoldIt
 ]
-
 % Enable this to use sans-serif by default instead of serif
 % \renewcommand{\familydefault}{\sfdefault}
-
-% Quotes
-\RequirePackage[autostyle,english=american]{csquotes}
-\MakeOuterQuote{"}
-
-% Bibliography and styling
-\RequirePackage[
-    backend=biber,
-    style=numeric-comp,
-    sorting=ydnt,
-    date=year,
-    isbn=false,
-    url=false,
-    doi=true,
-    minnames=1,
-    maxnames=9
-]{biblatex}
-% use small font for the bibliography
-\renewcommand*{\bibfont}{\normalfont\small}
-% style the custom notes (addendum in the biblatex entry) at the end of each reference
-\DeclareFieldFormat{addendum}{\lightmainfont\color{color-title}\bfseries\itshape (#1)}
-% change the horizontal distance between the numeric label and the reference
-\setlength{\biblabelsep}{\labelsep}
-
-% Hyperlinks
-\RequirePackage[hidelinks]{hyperref}
-\urlstyle{same}
-\newcommand{\link}[2]{\href{#1}{#2}}
 
 % Page styling
 \raggedbottom
 \raggedright
 
-% Header and footer styling (fancyhdr)
+% Header and footer formatting (fancyhdr)
+\RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -107,12 +75,26 @@
 }
 
 % Section title styling (titlesec)
+\RequirePackage{titlesec}
 \titleformat{\section}
-    {\scshape\raggedright\Large\color{color-title}}
-    {}
-    {0em}
-    {}
-    [\color{color-title}\titlerule\vspace{-\smallskipamount}]
+    {\scshape\Large\color{color-title}}
+    {}{0pt}{}
+    [\titlerule]
+% default:
+% {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing{\section}
+    {0pt}
+    {3.5ex plus 1ex minus .5ex}
+    {1ex plus .2ex minus .2ex}
+
+% Quotes
+\RequirePackage[autostyle,english=american]{csquotes}
+\MakeOuterQuote{"}
+
+% Hyperlinks
+\RequirePackage[hidelinks]{hyperref}
+\urlstyle{same}
+\newcommand{\link}[2]{\href{#1}{#2}}
 
 % Date and time format
 \RequirePackage[yyyymmdd,24hr]{datetime}
@@ -120,9 +102,51 @@
 
 % Shorthand
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newcommand{\detail}{\color{color-detail}}
+\newcommand{\fillyear}[1]{\phantom{#1}}         % Fill year
 
 % Dummy environment
 \newenvironment*{dummyenv}{}{}
+
+% Multi-column settings
+\RequirePackage{multicol}
+\setlength{\columnsep}{12pt}  % default space between columns
+\setlength{\multicolsep}{0.5\baselineskip plus 2pt minus 1.5pt}  % default vertical margin
+
+% List customization
+\RequirePackage{enumitem}
+\newlist{outerlist}{itemize}{2}
+\setlist[outerlist]{
+    label={},
+    leftmargin=0pt,
+    labelindent=\parindent,
+    itemsep=1ex plus 0.5ex minus 0.5ex,
+}
+
+\newlist{denseouterlist}{itemize}{1}
+\setlist[denseouterlist]{
+    label=\textbullet,
+    leftmargin=*,
+    labelindent=\parindent,
+    parsep=0pt,
+    itemsep=2pt,
+    % first=\small
+}
+
+\newlist{innerlist}{itemize}{1}
+\setlist[innerlist]{
+    label=\textbullet,
+    leftmargin=1.5em,
+    topsep=0pt,
+    itemsep=0.2ex plus .1ex minus .1ex,
+    first=\small
+}
+
+% List items
+\newcommand{\entrymid}[3]{
+    \item #1 \hfill #2\\
+    \textit{#3}
+}
 
 % Inline heading
 \newcommand{\headinginline}[2]{
@@ -162,46 +186,24 @@
     \end{minipage}
 }
 
-% Multi-columns (multicol) settings
-\setlength{\columnsep}{12pt}  % default space between columns
-\setlength{\multicolsep}{0.5\baselineskip plus 2pt minus 1.5pt}  % default vertical margin
-
-% Lists
-\newlist{outerlist}{itemize}{2}
-\setlist[outerlist]{
-    label={},
-    leftmargin=0pt,
-    labelindent=\parindent,
-}
-
-\newlist{denseouterlist}{itemize}{1}
-\setlist[denseouterlist]{
-    label=\textbullet,
-    leftmargin=*,
-    labelindent=\parindent,
-    parsep=0pt,
-    itemsep=2pt,
-    % first=\small
-}
-
-\newlist{innerlist}{itemize}{1}
-\setlist[innerlist]{
-    label=\textbullet,
-    leftmargin=1.5em,
-    topsep=0pt,
-    first=\small
-}
-
-% List items
-\newcommand{\entrymid}[3]{
-    \item #1 \hfill #2\\
-    \textit{#3}
-}
-
-\newcommand{\detail}{\color{color-detail}}
-
-% Fill year
-\newcommand{\fillyear}[1]{\phantom{#1}}
+% Bibliography and styling
+\RequirePackage[
+    backend=biber,
+    style=numeric-comp,
+    sorting=ydnt,
+    date=year,
+    isbn=false,
+    url=false,
+    doi=true,
+    minnames=1,
+    maxnames=9
+]{biblatex}
+% use small font for the bibliography
+\renewcommand*{\bibfont}{\normalfont\small}
+% style the custom notes (addendum in the biblatex entry) at the end of each reference
+\DeclareFieldFormat{addendum}{\lightmainfont\color{color-title}\bfseries\itshape (#1)}
+% change the horizontal distance between the numeric label and the reference
+\setlength{\biblabelsep}{\labelsep}
 
 % Make author name bold: https://tex.stackexchange.com/a/327046
 \newcommand*{\boldname}[3]{%
