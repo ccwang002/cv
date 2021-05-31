@@ -182,19 +182,23 @@
 % change the horizontal distance between the numeric label and the reference
 \setlength{\biblabelsep}{\labelsep}
 
-% Make author name bold: https://tex.stackexchange.com/a/327046
-\newcommand*{\boldname}[3]{%
-  \def\lastname{#1}%
-  \def\firstname{#2}%
-  \def\firstinit{#3}}
-\boldname{}{}{}
-
-\renewcommand{\mkbibnamegiven}[1]{%
-  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-  {\mkbibbold{#1}}{#1}%
-}
-
-\renewcommand{\mkbibnamefamily}[1]{%
-  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-  {\mkbibbold{#1}}{#1}%
+% Make author name bold in the reference and add co-first author notation
+% This solution is based on:
+%   1. an automatic approach but not always work (define \boldmyname):
+%      https://tex.stackexchange.com/a/327046
+%   2. manual annotation approach (always work in biblatex v3.13+):
+%      https://tex.stackexchange.com/a/561064
+\newcommand*{\boldmyname}[3]{%
+    \def\myfamilyname{#1}%
+    \def\mygivenname{#2}%
+    \def\mygiveninitial{#3}}
+\boldmyname{}{}{}
+\renewcommand*{\mkbibcompletename}[1]{%
+    {%
+        \ifitemannotation{highlight}{\bfseries}{}%
+        \ifboolexpr{ ( test {\ifdefequal{\mygivenname}{\namepartgiven}} or test {\ifdefequal{\mygiveninitial}{\namepartgiven}} ) and test {\ifdefequal{\myfamilyname}{\namepartfamily}} }%
+        {\bfseries}{}%
+        #1%
+    }%
+    \ifitemannotation{co-first}{\textsuperscript{*}}{}%
 }
