@@ -32,27 +32,7 @@
 \AtBeginDocument{\globalcolor{color-text}}
 
 % Unicode fonts
-\RequirePackage{fontspec}                       % Fonts and Unicode
-\setmainfont{SourceSerif4}[
-    Path=./fonts/source-serif/,
-    Ligatures=TeX,
-    UprightFont=*-Regular, ItalicFont=*-It,
-    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
-]
-\newfontfamily\lightmainfont{SourceSerif4}[
-    Path=./fonts/source-serif/,
-    Ligatures=TeX,
-    UprightFont=*-Light, ItalicFont=*-LightIt,
-    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
-]
-\setsansfont{SourceSans3}[
-    Path=./fonts/source-sans/,
-    Ligatures=TeX,
-    UprightFont=*-Regular, ItalicFont=*-It,
-    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
-]
-% Enable this to use sans-serif by default instead of serif
-% \renewcommand{\familydefault}{\sfdefault}
+\RequirePackage{fontspec}
 
 % Page styling
 \raggedbottom
@@ -168,7 +148,6 @@
 % Photo heading
 \newcommand{\headingphoto}[3]{
     \begin{minipage}[t]{0.60\textwidth}
-
     \vspace*{\fill}
     \begin{dummyenv}
     \Huge \textcolor{color-title}{#1}
@@ -200,8 +179,6 @@
 ]{biblatex}
 % use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
-% style the custom notes (addendum in the biblatex entry) at the end of each reference
-\DeclareFieldFormat{addendum}{\lightmainfont\color{color-title}\bfseries\itshape (#1)}
 % change the horizontal distance between the numeric label and the reference
 \setlength{\biblabelsep}{\labelsep}
 

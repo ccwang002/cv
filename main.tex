@@ -1,18 +1,5 @@
 \documentclass[letterpaper,11pt]{simple-cv}
 
-% Override theme color
-% Set theme color by RGB hex values
-\definecolor{color-title}{HTML}{08467a}
-% Use predefined colors in https://en.wikibooks.org/wiki/LaTeX/Colors
-% options: black, RedViolet, ForestGreen, MidnightBlue
-% \colorlet{color-title}{MidnightBlue}
-
-% Show overfull hbox
-\setlength\overfullrule{5pt}
-
-% Define the bibliography path
-\addbibresource{papers.bib}
-
 % Configure extra PDF metadata
 \hypersetup{
     pdftitle={Liang-Bo Wang's CV},
@@ -21,7 +8,54 @@
     pdfcreator={XeLaTeX}
 }
 
+% Override theme color
+% Set theme color by RGB hex values
+\definecolor{color-title}{HTML}{08467a}
+% or use predefined colors in https://en.wikibooks.org/wiki/LaTeX/Colors
+% options: black, RedViolet, ForestGreen, MidnightBlue
+% \colorlet{color-title}{MidnightBlue}
+
+% Fonts and Unicode
+\setmainfont{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
+]
+\newfontfamily\lightsourceserif{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Light, ItalicFont=*-LightIt,
+    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
+]
+\setsansfont{SourceSans3}[
+    Path=./fonts/source-sans/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont = *-BoldIt
+]
+\newfontfamily\lightsourcsans{SourceSans3}[
+    Path=./fonts/source-sans/,
+    Ligatures=TeX,
+    UprightFont=*-Light, ItalicFont=*-LightIt,
+    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
+]
+% Enable this to use sans-serif by default instead of serif
+% \renewcommand{\familydefault}{\sfdefault}
+
+% Show overfull hbox
+\setlength\overfullrule{5pt}
+
+% Define the bibliography path
+\addbibresource{papers.bib}
+
+% Define the author to bolden in the reference
 \boldname{Wang}{Liang-Bo}{L.-B.}
+
+% Style the custom notes (addendum in the biblatex entry) at the end of each reference
+\DeclareFieldFormat{addendum}
+    {\lightsourceserif\color{color-title}\bfseries\itshape (#1)}
+
 
 \begin{document}
 
@@ -42,12 +76,9 @@
 %     GitHub: \href{https://github.com/ccwang002}{@ccwang002}
 % }{profile_photo.jpg}
 
-% Page One
 \input{./sections/education.tex}
 \input{./sections/experience.tex}
 \input{./sections/publications.tex}
-
-% Page Two
 \input{./sections/scholarships_awards.tex}
 \input{./sections/skills.tex}
 % \input{./sections/projects.tex}
