@@ -64,7 +64,7 @@
 % {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing{\section}
     {0pt}
-    {3.5ex plus 1ex minus .5ex}
+    {3.0ex plus 1ex minus .2ex}
     {1ex plus .2ex minus .2ex}
 
 % Quotes
