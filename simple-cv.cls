@@ -4,9 +4,7 @@
 
 % Class options
 % Inherit options of article
-\DeclareOption*{%
-  \PassOptionsToClass{\CurrentOption}{article}
-}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
 
@@ -16,7 +14,7 @@
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
 
-% Define colors
+% Define colors (xcolor)
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \definecolor{color-title}{gray}{0.10}   % theme color
 \definecolor{color-text}{gray}{0.10}    % light black
@@ -44,14 +42,9 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}
-\fancyfoot[R]{
-    \small
-    Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[R]{\small Page \thepage\ of \pageref{LastPage}}
 \fancyfoot[L]{
-    \small
-    \ifthenelse{\value{page}=\pageref{LastPage}}
-    {Last updated: {\today}}
-    {}
+    \small \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\today}}{}
 }
 
 % Section title styling (titlesec)
@@ -60,8 +53,8 @@
     {\scshape\Large\color{color-title}}
     {}{0pt}{}
     [\titlerule]
-% default:
-% {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% original section spacing is:
+%   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing{\section}
     {0pt}
     {3.0ex plus 1ex minus .2ex}
@@ -71,29 +64,21 @@
 \RequirePackage[autostyle,english=american]{csquotes}
 \MakeOuterQuote{"}
 
-% Hyperlinks
+% Hyperlinks (hyperref)
 \RequirePackage[hidelinks]{hyperref}
 \urlstyle{same}
-\newcommand{\link}[2]{\href{#1}{#2}}
 
-% Date and time format
+% Date and time format (datetime)
 \RequirePackage[yyyymmdd,24hr]{datetime}
 \renewcommand{\dateseparator}{-}
 
-% Shorthand
-\newcommand{\email}[1]{\href{mailto:#1}{#1}}
-\newcommand{\detail}{\color{color-detail}}
-\newcommand{\fillyear}[1]{\phantom{#1}}         % Fill year
-
-% Dummy environment
-\newenvironment*{dummyenv}{}{}
-
-% Multi-column settings
+% Multi-column settings (multicol)
 \RequirePackage{multicol}
 \setlength{\columnsep}{12pt}  % default space between columns
-\setlength{\multicolsep}{0.5\baselineskip plus 2pt minus 1.5pt}  % default vertical margin
+\setlength{\multicolsep}{0pt plus 2pt minus 1.5pt}  % default vertical margin
 
-% List customization
+% Custom list customization (enumitem)
+% define custom list environments
 \RequirePackage{enumitem}
 \newlist{outerlist}{itemize}{2}
 \setlist[outerlist]{
@@ -110,7 +95,6 @@
     labelindent=\parindent,
     parsep=0pt,
     itemsep=2pt,
-    % first=\small
 }
 
 \newlist{innerlist}{itemize}{1}
@@ -122,21 +106,19 @@
     first=\small
 }
 
-% List items
-\newcommand{\entrymid}[3]{
-    \item #1 \hfill #2\\
-    \textit{#3}
-}
+% Shorthand
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newcommand{\detail}{\color{color-detail}}
 
 % Inline heading
 \newcommand{\headinginline}[2]{
     \begin{minipage}[t]{0.60\textwidth}
     \vspace*{\fill}
-    % \mainlightfont \bfseries
-    \Huge \textcolor{color-title}{#1}
+    {\Huge\color{color-title} #1}
+
     \vspace{5mm}
     \end{minipage}%
-    % Make sure there is paragraph break between two minipages
+    % Make sure there isn't any space between two minipages
     % Ref: https://tex.stackexchange.com/a/114521
     \begin{minipage}[t]{0.4\textwidth}
     \begin{flushright}
@@ -149,9 +131,7 @@
 \newcommand{\headingphoto}[3]{
     \begin{minipage}[t]{0.60\textwidth}
     \vspace*{\fill}
-    \begin{dummyenv}
-    \Huge \textcolor{color-title}{#1}
-    \end{dummyenv}
+    {\Huge\color{color-title} #1}
 
     \vspace{1.5\baselineskip}
     #2
