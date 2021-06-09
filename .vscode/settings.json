@@ -17,5 +17,28 @@
     "latex-workshop.bibtex-format.sortby": [
         "year-desc"
     ],
-    "latex-workshop.bibtex-format.trailingComma": true
+    "latex-workshop.bibtex-format.trailingComma": true,
+    "cSpell.language": "en,en-US",
+    "cSpell.enabled": true,
+    "cSpell.enableFiletypes": [
+        "latex",
+        "markdown",
+        "text"
+    ],
+    "cSpell.words": [
+        "CMOS",
+        "CPTAC",
+        "Cheng",
+        "Chuang",
+        "HTAN",
+        "Pinkoi",
+        "Proteogenomic",
+        "TCGA",
+        "Tian",
+        "conda",
+        "convolutional",
+        "glioblastoma",
+        "hbox",
+        "transcriptomics"
+    ]
 }
