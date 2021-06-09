@@ -168,7 +168,7 @@
 % Bibliography and styling
 \RequirePackage[
     backend=biber,
-    style=numeric-comp,
+    style=nature,
     sorting=ydnt,
     date=year,
     isbn=false,
