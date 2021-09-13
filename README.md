@@ -41,5 +41,7 @@ On macOS:
 
 
 ### Build
+The document can be build by LuaLaTeX and XeLaTeX.
 
+    latexmk -lualalatex main.tex
     latexmk -xelatex main.tex
