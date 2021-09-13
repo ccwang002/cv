@@ -4,7 +4,7 @@ The CV template is based on [dcetin/Simple-CV] under MIT license, with modificat
 Style changes:
 - All elements are aligned to the document margin
 - Use normal fontsize instead of small for most elements
-- Use custom (sans-)serif font (require XeLaTeX)
+- Use custom (sans-)serif font (require LuaLaTeX or XeLaTeX)
 - Implement author highlight and co-first author notation through biblatex annotation
 - Define custom horizontal margins of the list environments
 - Show the last update date at the footer of the last page
@@ -41,7 +41,7 @@ On macOS:
 
 
 ### Build
-The document can be build by LuaLaTeX and XeLaTeX.
+The document can be build by LuaLaTeX or XeLaTeX.
 
     latexmk -lualalatex main.tex
     latexmk -xelatex main.tex
