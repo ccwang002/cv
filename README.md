@@ -17,6 +17,7 @@ Technical changes:
 - Layout by `\hfill` instead of `tabular` environmen
 - Set custom vertical margin spaces globally; fewer `\vspace` overrides
 - Use `latexmk` to build the document
+- Set up GitHub Workflow to automatically build the PDF
 
 Fonts in use are included in the repo:
 
