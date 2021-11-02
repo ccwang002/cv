@@ -1,0 +1,32 @@
+name: Build LaTeX PDF
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out Git Repository
+      uses: actions/checkout@v2
+
+    # - name: Cache LuaTex fonts
+    #   uses: actions/cache@v2
+    #   env:
+    #     cache-name: cache-luatex
+    #   with:
+    #     path: /opt/texlive/texdir/texmf-var/luatex-cache
+    #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**') }}
+
+    - name: Build LaTeX files
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: main.tex
+        latexmk_use_lualatex: true
+
+    - name: Check if PDF file is generated
+      run: |
+        file main.pdf | grep -q ' PDF '
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDF
+        path: main.pdf
