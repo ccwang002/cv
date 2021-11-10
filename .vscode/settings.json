@@ -41,5 +41,7 @@
         "glioblastoma",
         "hbox",
         "transcriptomics"
-    ]
+    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100
 }
