@@ -14,8 +14,9 @@ Technical changes:
 - Consolidate package dependencies
 - Prefer original latex syntax over custom commands
 - Custom list environments are built by `enumitem` package
-- Layout by `\hfill` instead of `tabular` environmen
+- Layout by `\hfill` instead of `tabular` environment
 - Set custom vertical margin spaces globally; fewer `\vspace` overrides
+- Use `microtype` package to tweak text kerning and spacing
 - Use `latexmk` to build the document
 - Set up GitHub Workflow to automatically build the PDF
 
