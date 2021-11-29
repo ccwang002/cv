@@ -13,6 +13,11 @@
 \RequirePackage{lastpage}                       % Page numbering
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
+\RequirePackage{microtype}                      % Tweak typographics
+\microtypesetup{
+    activate=true,
+    babel=true,
+}
 
 % Define colors (xcolor)
 \RequirePackage[usenames,dvipsnames]{xcolor}
