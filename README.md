@@ -39,7 +39,8 @@ On macOS:
         biber biblatex biblatex-nature \
         titlesec enumitem lastpage \
         fancyhdr csquotes \
-        datetime fmtcount
+        datetime2 datetime2-english \
+        tracklang fmtcount
 
 
 ### Build

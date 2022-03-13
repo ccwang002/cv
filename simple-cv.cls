@@ -49,7 +49,7 @@
 \fancyhf{}
 \fancyfoot[R]{\small Page \thepage\ of \pageref{LastPage}}
 \fancyfoot[L]{
-    \small \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\today}}{}
+    \small \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\Today}}{}
 }
 
 % Section title styling (titlesec)
@@ -73,9 +73,9 @@
 \RequirePackage[hidelinks]{hyperref}
 \urlstyle{same}
 
-% Date and time format (datetime)
-\RequirePackage[yyyymmdd,24hr]{datetime}
-\renewcommand{\dateseparator}{-}
+% Date and time format (datetime2)
+% provide \Today
+\RequirePackage[style=iso]{datetime2}
 
 % Multi-column settings (multicol)
 \RequirePackage{multicol}
