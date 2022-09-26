@@ -25,23 +25,16 @@
         "markdown",
         "text"
     ],
-    "cSpell.words": [
-        "CMOS",
-        "CPTAC",
-        "Cheng",
-        "Chuang",
-        "HTAN",
-        "Pinkoi",
-        "Proteogenomic",
-        "TCGA",
-        "Tian",
-        "WUSTL",
-        "conda",
-        "convolutional",
-        "glioblastoma",
-        "hbox",
-        "transcriptomics"
-    ],
+    "cSpell.customDictionaries": {
+        "project-words": {
+          "name": "project-words",
+          "path": "${workspaceRoot}/project-words.txt",
+          "description": "Words used in this project",
+          "addWords": true
+        },
+        "custom": true, // Enable the `custom` dictionary
+        "internal-terms": false // Disable the `internal-terms` dictionary
+      },
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100
 }
