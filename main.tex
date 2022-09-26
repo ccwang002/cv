@@ -56,6 +56,11 @@
 \DeclareFieldFormat{addendum}
     {\lightsourceserif\color{color-title}\bfseries\itshape (#1)}
 
+% Style the volume (un-bold it)
+\DeclareFieldFormat[article]{volume}{\normalfont #1}
+
+% Force the publication title to be in sentence case
+\DeclareFieldFormat[article]{titlecase}{\MakeSentenceCase*{#1}}
 
 \begin{document}
 

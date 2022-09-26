@@ -159,6 +159,7 @@
     isbn=false,
     url=false,
     doi=true,
+    eprint=false,
     minnames=1,
     maxnames=9
 ]{biblatex}
