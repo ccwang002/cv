@@ -10,15 +10,15 @@ jobs:
     - name: Build LaTeX files
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: main.tex
+        root_file: cv.tex
         latexmk_use_lualatex: true
 
     - name: Check if PDF file is generated
       run: |
-        file main.pdf | grep -q ' PDF '
+        file cv.pdf | grep -q ' PDF '
 
     - name: Upload PDF
       uses: actions/upload-artifact@v2
       with:
         name: PDF
-        path: main.pdf
+        path: cv.pdf
