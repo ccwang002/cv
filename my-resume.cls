@@ -37,8 +37,11 @@
 \RequirePackage{fontspec}
 
 % Page styling
-\raggedbottom
+\RequirePackage{ragged2e}  % better ragged controls
+% Use raggedright instead of RaggedRight will suppress all hypenations,
+% but it leads to better layout in this case.
 \raggedright
+\raggedbottom
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
@@ -72,8 +75,8 @@
 % Custom list customization (enumitem)
 % define custom list environments
 \RequirePackage{enumitem}
-\newlist{outerlist}{itemize}{2}
-\setlist[outerlist]{
+\newlist{entrylist}{itemize}{2}
+\setlist[entrylist]{
     label={},
     leftmargin=0pt,
     labelindent=\parindent,
@@ -81,8 +84,8 @@
     parsep=0ex,
 }
 
-\newlist{denseouterlist}{itemize}{1}
-\setlist[denseouterlist]{
+\newlist{compactentrylist}{itemize}{1}
+\setlist[compactentrylist]{
     label=\textbullet,
     leftmargin=*,
     labelindent=\parindent,
@@ -90,8 +93,8 @@
     itemsep=2pt,
 }
 
-\newlist{innerlist}{itemize}{1}
-\setlist[innerlist]{
+\newlist{detaillist}{itemize}{1}
+\setlist[detaillist]{
     label=\textbullet,
     leftmargin=1.5em,
     topsep=0pt,
