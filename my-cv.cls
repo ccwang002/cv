@@ -38,8 +38,11 @@
 \RequirePackage{fontspec}
 
 % Page styling
-\raggedbottom
+\RequirePackage{ragged2e}  % better ragged controls
+% Use raggedright instead of RaggedRight will suppress all hypenations,
+% but it leads to better layout in this case.
 \raggedright
+\raggedbottom
 
 % Header and footer formatting (fancyhdr)
 \RequirePackage{fancyhdr}
@@ -117,8 +120,8 @@
 \newcommand{\detail}{\color{color-detail}}
 
 % Inline heading
-\newcommand{\headinginline}[2]{
-    \begin{minipage}[t]{0.60\textwidth}
+\newcommand{\headinginline}[2]{%
+    \begin{minipage}[t]{0.6\textwidth}
     \vspace*{\fill}
     {\Huge\color{color-title} #1}
 
@@ -127,10 +130,12 @@
     % Make sure there isn't any space between two minipages
     % Ref: https://tex.stackexchange.com/a/114521
     \begin{minipage}[t]{0.4\textwidth}
+    % Use FlushRight will cause underfull hbox on every line
+    % use flushright instead
     \begin{flushright}
     #2
     \end{flushright}
-    \end{minipage}
+    \end{minipage}%
 }
 
 % Photo heading
@@ -148,7 +153,7 @@
     \begin{flushright}
     \includegraphics[height=4cm,keepaspectratio]{#3}
     \end{flushright}
-    \end{minipage}
+    \end{minipage}%
 }
 
 % Bibliography and styling
@@ -162,13 +167,13 @@
     doi=true,
     eprint=false,
     minnames=1,
-    maxnames=9
+    maxnames=9,
+    block=none
 ]{biblatex}
 % use small font for the bibliography
 \renewcommand*{\bibfont}{\normalfont\small}
 % change the horizontal distance between the numeric label and the reference
 \setlength{\biblabelsep}{\labelsep}
-
 % Make author name bold in the reference and add co-first author notation
 % using manual annotation (always work in biblatex v3.13+).
 % Ref: https://tex.stackexchange.com/a/561064

@@ -1,3 +1,13 @@
 % !TeX root = ../cv.tex
 \nocite{*}
+
+\begingroup
+% More ways to eliminate overfull hbox warnings
+% https://tex.stackexchange.com/a/442317
+% https://tex.stackexchange.com/a/517365
+% \setlength{\emergencystretch}{1pt}  % add additional space when overfull
+% \setlength\hfuzz{0.25pt}  % ignore small overfull hboxes
+% \RaggedRight
+\justifying  % Justified paragraphs use fewer lines
 \printbibliography[title=Publications]
+\endgroup
