@@ -51,7 +51,10 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}
 \fancyfoot[R]{%
-    \footnotesize \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\Today}}{}%
+    \footnotesize
+    \color{color-detail}
+    \ifthenelse{\value{page}=\pageref{LastPage}}
+        {Last updated: {\Today}}{}%
 }
 \fancyfoot[L]{}
 
