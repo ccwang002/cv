@@ -92,7 +92,9 @@
     label={},
     leftmargin=0pt,
     labelindent=\parindent,
+    topsep=0pt, % 9pt plus 3pt minus 5pt,
     parsep=0pt,
+    partopsep=0pt,
     itemsep=1ex plus .2ex minus .2ex,
 }
 
@@ -102,6 +104,7 @@
     leftmargin=1.5em,
     topsep=0pt,
     parsep=0pt,
+    partopsep=0pt,
     itemsep=0.2ex plus .1ex minus .1ex,
     first=\small
 }
@@ -124,6 +127,7 @@
 \renewcommand*{\bibfont}{\normalfont\small}
 % change the horizontal distance between the numeric label and the reference
 \setlength{\biblabelsep}{\labelsep}
+\AtBeginBibliography{\vspace*{-\baselineskip}\vspace*{\topsep}\vspace*{0.5ex}}
 
 % Make author name bold in the reference and add co-first author notation
 % This solution is based on the manual annotation approach
