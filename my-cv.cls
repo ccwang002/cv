@@ -170,21 +170,11 @@
 \setlength{\biblabelsep}{\labelsep}
 
 % Make author name bold in the reference and add co-first author notation
-% This solution is based on:
-%   1. an automatic approach but not always work (define \boldmyname):
-%      https://tex.stackexchange.com/a/327046
-%   2. manual annotation approach (always work in biblatex v3.13+):
-%      https://tex.stackexchange.com/a/561064
-\newcommand*{\boldmyname}[3]{%
-    \def\myfamilyname{#1}%
-    \def\mygivenname{#2}%
-    \def\mygiveninitial{#3}}
-\boldmyname{}{}{}
+% using manual annotation (always work in biblatex v3.13+).
+% Ref: https://tex.stackexchange.com/a/561064
 \renewcommand*{\mkbibcompletename}[1]{%
     {%
         \ifitemannotation{highlight}{\bfseries}{}%
-        \ifboolexpr{ ( test {\ifdefequal{\mygivenname}{\namepartgiven}} or test {\ifdefequal{\mygiveninitial}{\namepartgiven}} ) and test {\ifdefequal{\myfamilyname}{\namepartfamily}} }%
-        {\bfseries}{}%
         #1%
     }%
     \ifitemannotation{co-first}{\textsuperscript{*}}{}%
