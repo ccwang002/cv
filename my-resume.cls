@@ -52,8 +52,8 @@
 %   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing{\section}
     {0pt}
-    {5ex plus 1ex minus .2ex}
-    {1ex plus .2ex minus .2ex}
+    {2ex plus .2ex minus .4ex}
+    {1ex minus .2ex}
 
 % Quotes
 \RequirePackage[autostyle,english=american]{csquotes}
@@ -80,8 +80,8 @@
     label={},
     leftmargin=0pt,
     labelindent=\parindent,
-    itemsep=1ex minus 0.25ex,
-    parsep=0ex,
+    parsep=0pt,
+    itemsep=1.2ex plus .2ex minus .2ex,
 }
 
 \newlist{compactentrylist}{itemize}{1}
@@ -98,8 +98,8 @@
     label=\textbullet,
     leftmargin=1.5em,
     topsep=0pt,
-    itemsep=1pt minus 0.5pt,
     parsep=0pt,
+    itemsep=0.2ex plus .1ex minus .1ex,
     first=\small
 }
 
