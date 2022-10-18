@@ -5,20 +5,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out Git Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build LaTeX files
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: cv.tex
+        root_file: |
+            cv.tex
+            resume.tex
         latexmk_use_lualatex: true
 
-    - name: Check if PDF file is generated
+    - name: Check if the PDFs are generated
       run: |
         file cv.pdf | grep -q ' PDF '
+        file resume.pdf | grep -q ' PDF '
 
-    - name: Upload PDF
-      uses: actions/upload-artifact@v2
+    - name: Upload the PDFs
+      uses: actions/upload-artifact@v3
       with:
         name: PDF
-        path: cv.pdf
+        path: |
+            cv.pdf
+            resume.pdf
