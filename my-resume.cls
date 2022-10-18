@@ -45,9 +45,12 @@
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
+\newcommand{\defaultsection}{%
 \titleformat{\section}
     {\Large\bfseries\color{color-title}}
-    {}{0pt}{}
+    {}{0pt}{}%
+}
+\defaultsection
 % original section spacing is:
 %   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing{\section}

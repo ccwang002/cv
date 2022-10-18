@@ -1,10 +1,26 @@
 % !TeX root = ../resume.tex
+
+% Change only the style of this section
+\titleformat{\section}[runin]
+    {\Large\bfseries\color{color-title}}
+    {}{0pt}{}
+
 \nocite{
     wanglb_cptac:GBM2021,
     baileymh_pcawgconsortium:RetrospectiveEvaluation2020,
     gaogf_noblems:ComparisonLegacy2019,
     thebiocondateam_kosterj:BiocondaSustainable2018,
     xuy_changeic:LargeScale2017,
+}
+
+% Add a paragraph before the bibliography list
+% Ref: https://tex.stackexchange.com/a/55034
+\defbibnote{seefullbib}{%
+\hfill
+\color{color-detail}
+\footnotesize
+See full list of publications on
+\href{https://scholar.google.com/citations?user=-tdb3hcAAAAJ}{Google Scholar}
 }
 
 \begingroup
@@ -15,5 +31,8 @@
 % \setlength\hfuzz{0.25pt}  % ignore small overfull hboxes
 % \RaggedRight
 \justifying  % Justified paragraphs use fewer lines
-\printbibliography[title=Selected Publications]
+\printbibliography[title=Publications,prenote=seefullbib]
 \endgroup
+
+% Reset the section style
+\defaultsection
