@@ -84,7 +84,7 @@
     leftmargin=0pt,
     labelindent=\parindent,
     parsep=0pt,
-    itemsep=1.2ex plus .2ex minus .2ex,
+    itemsep=1ex plus .2ex minus .2ex,
 }
 
 \newlist{compactentrylist}{itemize}{1}
