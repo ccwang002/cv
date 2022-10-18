@@ -10,6 +10,7 @@
 
 % Packages
 \RequirePackage[margin=1.5cm]{geometry}         % Margin
+\RequirePackage{lastpage}                       % Page numbering
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
 \RequirePackage{microtype}                      % Tweak typographics
@@ -42,6 +43,17 @@
 % but it leads to better layout in this case.
 \raggedright
 \raggedbottom
+
+% Header and footer formatting (fancyhdr)
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[R]{%
+    \footnotesize \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\Today}}{}%
+}
+\fancyfoot[L]{}
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
