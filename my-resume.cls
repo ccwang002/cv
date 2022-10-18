@@ -112,7 +112,7 @@
     date=year,
     isbn=false,
     url=false,
-    doi=true,
+    doi=false,
     eprint=false,
     minnames=1,
     maxnames=9
@@ -132,3 +132,14 @@
     }%
     \ifitemannotation{co-first}{\textsuperscript{*}}{}%
 }
+
+% Add link to DOI in every publication's title
+\newbibmacro{link-to-doi}[1]{%
+    \iffieldundef{doi}{%
+        #1%
+    }{%
+        \href{https://doi.org/\thefield{doi}}{#1}%
+    }%
+}
+\DeclareFieldFormat[article]{title}%
+    {\usebibmacro{link-to-doi}{#1}}
