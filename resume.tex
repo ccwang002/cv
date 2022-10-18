@@ -1,0 +1,98 @@
+\documentclass[letterpaper,11pt]{my-resume}
+
+% Configure extra PDF metadata
+\hypersetup{
+    pdftitle={Liang-Bo Wang's CV},
+    pdfauthor={Liang-Bo Wang},
+    pdfsubject={http://liang2.tw},
+    pdfcreator={LuaLaTeX}
+}
+
+% Override theme color
+% Set theme color by RGB hex values
+\definecolor{color-title}{HTML}{08467a}
+% or use predefined colors in https://en.wikibooks.org/wiki/LaTeX/Colors
+% options: black, RedViolet, ForestGreen, MidnightBlue
+% \colorlet{color-title}{MidnightBlue}
+
+% Use custom fonts
+\setmainfont{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont=*-BoldIt
+]
+\newfontfamily\lightsourceserif{SourceSerif4}[
+    Path=./fonts/source-serif/,
+    Ligatures=TeX,
+    UprightFont=*-Light, ItalicFont=*-LightIt,
+    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
+]
+\setsansfont{SourceSans3}[
+    Path=./fonts/source-sans/,
+    Ligatures=TeX,
+    UprightFont=*-Regular, ItalicFont=*-It,
+    BoldFont=*-Bold, BoldItalicFont=*-BoldIt
+]
+\newfontfamily\lightsourcesans{SourceSans3}[
+    Path=./fonts/source-sans/,
+    Ligatures=TeX,
+    UprightFont=*-Light, ItalicFont=*-LightIt,
+    BoldFont=*-Semibold, BoldItalicFont=*-SemiboldIt
+]
+% Enable this to use sans-serif by default instead of serif
+\renewcommand{\familydefault}{\sfdefault}
+
+% Show overfull hbox
+\setlength\overfullrule{5pt}
+
+% Define the bibliography path
+\addbibresource{papers.bib}
+
+% Style the custom notes (addendum in the biblatex entry) at the end of each reference
+\DeclareFieldFormat{addendum}
+    {\lightsourceserif\color{color-title}\bfseries\itshape (#1)}
+
+% Style the volume (un-bold it)
+\DeclareFieldFormat[article]{volume}{\normalfont #1}
+
+% Force the publication title to be in sentence case
+\DeclareFieldFormat[article]{titlecase}{\MakeSentenceCase*{#1}}
+
+\begin{document}
+
+% Heading
+\begin{minipage}[c]{0.60\textwidth}
+    \vfill
+    {\Huge\bfseries\color{color-title} Liang-Bo Wang}
+\end{minipage}%
+% Make sure there isn't any space between two minipages
+% Ref: https://tex.stackexchange.com/a/114521
+\begin{minipage}[c]{0.4\textwidth}
+    \begin{flushright}
+        \lightsourcesans
+        \href{mailto:liang-bo.wang@wustl.edu}{liang-bo.wang@wustl.edu} \\
+        +1 (314) 285-8111 \\
+        \href{https://blog.liang2.tw}{blog.liang2.tw} \\
+        GitHub: \href{https://github.com/ccwang002}{ccwang002}
+    \end{flushright}
+\end{minipage}
+\vspace{1em}
+
+% Increase line spacing
+\linespread{1.05}
+
+% https://www.overleaf.com/latex/templates/plushcv/jybpnsftmdkf
+\begin{minipage}[t]{0.65\textwidth}
+    \input{resume_sections/experience.tex}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+    \input{resume_sections/education.tex}
+\end{minipage}%
+
+% \begin{multicols*}{2}
+% \newcolumn
+% \end{multicols*}
+
+\end{document}
