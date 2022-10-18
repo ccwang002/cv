@@ -4,6 +4,9 @@
 \titleformat{\section}[runin]
     {\Large\bfseries\color{color-title}}
     {}{0pt}{}
+\titlespacing{\section}
+    {\parindent}  % restore the indent
+    {2.5ex}{0ex}
 
 \nocite{
     wanglb_cptac:GBM2021,
@@ -16,11 +19,11 @@
 % Add a paragraph before the bibliography list
 % Ref: https://tex.stackexchange.com/a/55034
 \defbibnote{seefullbib}{%
-\hfill
-\color{color-detail}
-\footnotesize
-See full list of publications on
-\href{https://scholar.google.com/citations?user=-tdb3hcAAAAJ}{Google Scholar}
+    \hfill
+    \color{color-detail}
+    \footnotesize
+    See full list of publications on
+    \href{https://scholar.google.com/citations?user=-tdb3hcAAAAJ}{Google Scholar}
 }
 
 \begingroup
@@ -37,6 +40,3 @@ See full list of publications on
     heading=bibintoc,
 ]
 \endgroup
-
-% Reset the section style
-\defaultsection
