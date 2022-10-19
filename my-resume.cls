@@ -60,15 +60,18 @@
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
-\titleformat{\section}
-    {\Large\bfseries\color{color-title}}
-    {}{0pt}{}
-% original section spacing is:
-%   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing{\section}
-    {0pt}  % left
-    {2ex}  % before
-    {0.5ex}  % after
+\newcommand{\defaultsectionstyle}{
+    \titleformat{\section}
+        {\Large\bfseries\color{color-title}}
+        {}{0pt}{}
+    % original section spacing is:
+    %   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+    \titlespacing{\section}
+        {0pt}  % left
+        {2ex}  % before
+        {0.5ex}  % after
+}
+\defaultsectionstyle
 
 % Quotes
 \RequirePackage[autostyle,english=american]{csquotes}
