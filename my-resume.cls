@@ -105,11 +105,11 @@
 \setlist[detaillist]{
     label=\textbullet,
     leftmargin=1.5em,
-    topsep=0pt,
+    topsep=2pt,
     parsep=0pt,
     partopsep=0pt,
-    itemsep=0.2ex plus .1ex minus .1ex,
-    first=\small
+    itemsep=2pt plus 0.5pt minus 0.5pt,
+    first=\small,
 }
 
 
