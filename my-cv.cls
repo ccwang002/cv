@@ -119,43 +119,6 @@
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}
 \newcommand{\detail}{\color{color-detail}}
 
-% Inline heading
-\newcommand{\headinginline}[2]{%
-    \begin{minipage}[t]{0.6\textwidth}
-    \vspace*{\fill}
-    {\Huge\color{color-title} #1}
-
-    \vspace{5mm}
-    \end{minipage}%
-    % Make sure there isn't any space between two minipages
-    % Ref: https://tex.stackexchange.com/a/114521
-    \begin{minipage}[t]{0.4\textwidth}
-    % Use FlushRight will cause underfull hbox on every line
-    % use flushright instead
-    \begin{flushright}
-    #2
-    \end{flushright}
-    \end{minipage}%
-}
-
-% Photo heading
-\newcommand{\headingphoto}[3]{
-    \begin{minipage}[t]{0.60\textwidth}
-    \vspace*{\fill}
-    {\Huge\color{color-title} #1}
-
-    \vspace{1.5\baselineskip}
-    #2
-    \end{minipage}%
-    % Align the image at the bottom
-    % Ref: https://tex.stackexchange.com/a/132240
-    \begin{minipage}[t][][b]{0.4\textwidth}
-    \begin{flushright}
-    \includegraphics[height=4cm,keepaspectratio]{#3}
-    \end{flushright}
-    \end{minipage}%
-}
-
 % Bibliography and styling
 \RequirePackage[
     backend=biber,
