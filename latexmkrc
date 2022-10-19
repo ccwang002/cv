@@ -1,1 +1,1 @@
-$clean_full_ext = "%R.bbl %R.run.xml";
+$clean_ext = "%R.bbl %R.run.xml";
