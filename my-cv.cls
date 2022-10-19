@@ -123,7 +123,6 @@
 
 % Shorthand
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}
-\newcommand{\detail}{\color{color-detail}}
 
 % Bibliography and styling
 \RequirePackage[
