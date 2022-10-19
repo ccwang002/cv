@@ -106,17 +106,6 @@
     itemsep=1ex plus 0.5ex minus 0.5ex,
 }
 
-\newlist{compactentrylist}{itemize}{1}
-\setlist[compactentrylist]{
-    label={},
-    leftmargin=*,
-    labelindent=\parindent,
-    topsep=2pt,
-    parsep=0pt,
-    partopsep=0pt,
-    itemsep=2pt plus 0.5pt minus 0.5pt,
-}
-
 \newlist{detaillist}{itemize}{1}
 \setlist[detaillist]{
     label=\textbullet,
