@@ -50,9 +50,16 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}
-\fancyfoot[R]{\small Page \thepage\ of \pageref{LastPage}}
-\fancyfoot[L]{
-    \small \ifthenelse{\value{page}=\pageref{LastPage}}{Last updated: {\Today}}{}
+\fancyfoot[R]{%
+    \footnotesize
+    \color{color-detail}
+    Page \thepage\ of \pageref{LastPage}%
+}
+\fancyfoot[L]{%
+    \footnotesize
+    \color{color-detail}
+    \ifthenelse{\value{page}=\pageref{LastPage}}
+        {Last updated: {\Today}}{}%
 }
 
 % Section title styling (titlesec)
