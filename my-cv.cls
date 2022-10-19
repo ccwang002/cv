@@ -64,9 +64,9 @@
 % original section spacing is:
 %   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing{\section}
-    {0pt}
-    {3.0ex plus 1ex minus .2ex}
-    {1ex plus .2ex minus .2ex}
+    {0pt}  % left
+    {2ex}  % before
+    {1ex}  % after
 
 % Quotes
 \RequirePackage[autostyle,english=american]{csquotes}
@@ -83,7 +83,7 @@
 % Multi-column settings (multicol)
 \RequirePackage{multicol}
 \setlength{\columnsep}{12pt}  % default space between columns
-\setlength{\multicolsep}{0pt plus 2pt minus 1.5pt}  % default vertical margin
+\setlength{\multicolsep}{0pt}  % default vertical margin
 
 % Custom list customization (enumitem)
 % define custom list environments
@@ -93,25 +93,31 @@
     label={},
     leftmargin=0pt,
     labelindent=\parindent,
-    parsep=4pt plus 2pt minus 1pt,
+    topsep=4pt plus 2pt minus 1pt,
+    parsep=0pt,
+    partopsep=0pt,
     itemsep=1ex plus 0.5ex minus 0.5ex,
 }
 
 \newlist{compactentrylist}{itemize}{1}
 \setlist[compactentrylist]{
-    label=\textbullet,
+    label={},
     leftmargin=*,
     labelindent=\parindent,
+    topsep=2pt,
     parsep=0pt,
-    itemsep=2pt,
+    partopsep=0pt,
+    itemsep=2pt plus 0.5pt minus 0.5pt,
 }
 
 \newlist{detaillist}{itemize}{1}
 \setlist[detaillist]{
     label=\textbullet,
     leftmargin=1.5em,
-    topsep=0pt,
-    itemsep=0.2ex plus .1ex minus .1ex,
+    topsep=3pt,
+    parsep=0pt,
+    partopsep=0pt,
+    itemsep=2pt plus 0.5pt minus 0.5pt,
     first=\small
 }
 
