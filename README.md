@@ -1,4 +1,8 @@
 # My CV and Resume
+ [![Build LaTeX PDF status](https://github.com/ccwang002/cv/actions/workflows/build_latex.yml/badge.svg)][workflow-status]
+
+[workflow-status]: https://github.com/ccwang002/cv/actions
+
 
 ## My CV
 The CV template is based on [dcetin/Simple-CV] under MIT license, with modifications below.
@@ -62,10 +66,7 @@ It may work on XeLaTeX as well but untested.
 
 To clean up the intermediates build files:
 
-    latexmk -c
+    latexmk -c  # remove intermediate files
     latexmk -C  # also remove the compiled documents
 
-This template also sets up a GitHub Workflow that automatically builds PDF online when the status of this badge says passing: [![Build LaTeX PDF status](https://github.com/ccwang002/cv/actions/workflows/build_latex.yml/badge.svg)][workflow-status].
-
-
-[workflow-status]: https://github.com/ccwang002/cv/actions
+This template also sets up a GitHub Workflow that automatically builds PDF online when the  badge status shows it's passing.
