@@ -23,6 +23,7 @@ Liang
 lualatex
 Pinkoi
 Proteogenomic
+pytest
 runin
 sansquoi
 TCGA
