@@ -107,7 +107,7 @@
 \newlist{detaillist}{itemize}{1}
 \setlist[detaillist]{
     label=\textbullet,
-    leftmargin=1.5em,
+    leftmargin=1.2em,
     topsep=2pt,
     parsep=0pt,
     partopsep=0pt,
