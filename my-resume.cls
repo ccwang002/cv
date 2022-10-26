@@ -98,7 +98,7 @@
     label={},
     leftmargin=0pt,
     labelindent=\parindent,
-    topsep=0pt, % 9pt plus 3pt minus 5pt,
+    topsep=0pt,
     parsep=0pt,
     partopsep=0pt,
     itemsep=1ex plus .2ex minus .2ex,
