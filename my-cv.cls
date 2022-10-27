@@ -65,7 +65,7 @@
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
 \titleformat{\section}
-    {\scshape\Large\color{color-title}}
+    {\lightsourceserif\bfseries\scshape\Large\color{color-title}}
     {}{0pt}{}
     [\hrule height 0.6pt]
 % original section spacing is:
