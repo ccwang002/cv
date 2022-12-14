@@ -21,6 +21,7 @@ HTAN
 latexmk
 Liang
 lualatex
+omics
 Pinkoi
 Proteogenomic
 pytest
