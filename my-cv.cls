@@ -64,16 +64,19 @@
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
-\titleformat{\section}
-    {\lightsourceserif\bfseries\scshape\Large\color{color-title}}
-    {}{0pt}{}
-    [\hrule height 0.6pt]
-% original section spacing is:
-%   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing{\section}
-    {0pt}  % left
-    {2ex}  % before
-    {1ex}  % after
+\newcommand{\defaultsectionstyle}{
+    \titleformat{\section}
+        {\lightsourceserif\bfseries\scshape\Large\color{color-title}}
+        {}{0pt}{}
+        [\hrule height 0.6pt]
+    % original section spacing is:
+    %   {3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+    \titlespacing{\section}
+        {0pt}  % left
+        {2ex}  % before
+        {1ex}  % after
+}
+\defaultsectionstyle
 
 % Quotes
 \RequirePackage[autostyle,english=american]{csquotes}
