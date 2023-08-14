@@ -1,6 +1,6 @@
 % Identification
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{my-resume}[2022/10/16 My Resume class]
+\ProvidesClass{my-resume}[2023/08/13 My Resume class]
 
 % Class options
 % Inherit options of article
