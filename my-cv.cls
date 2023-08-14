@@ -10,7 +10,6 @@
 
 % Packages
 \RequirePackage[margin=1.5cm]{geometry}         % Margin
-\RequirePackage{lastpage}                       % Page numbering
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
 \RequirePackage{microtype}                      % Tweak typographics
@@ -50,17 +49,20 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}
+\makeatletter%
 \fancyfoot[R]{%
     \footnotesize
     \color{color-detail}
-    Page \thepage\ of \pageref{LastPage}%
+    Page \thepage\ of \@abspage@last%
 }
 \fancyfoot[L]{%
     \footnotesize
     \color{color-detail}
-    \ifthenelse{\value{page}=\pageref{LastPage}}
-        {Last updated: {\Today}}{}%
+    \ifnum\thepage=\@abspage@last%
+        Last updated: {\Today}%
+    \fi
 }
+\makeatother
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
