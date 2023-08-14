@@ -49,13 +49,16 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}
+\makeatletter%
 \fancyfoot[R]{%
     \footnotesize
     \color{color-detail}
-    \ifthenelse{\value{page}=\pageref{LastPage}}
-        {Last updated: {\Today}}{}%
+    \ifnum\thepage=\@abspage@last%
+        Last updated: {\Today}%
+    \fi
 }
 \fancyfoot[L]{}
+\makeatother
 
 % Section title styling (titlesec)
 \RequirePackage{titlesec}
