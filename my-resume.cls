@@ -10,7 +10,6 @@
 
 % Packages
 \RequirePackage[margin=1.5cm]{geometry}         % Margin
-\RequirePackage{lastpage}                       % Page numbering
 \RequirePackage[english]{babel}                 % Language styles
 \RequirePackage{graphicx}                       % Importing graphics
 \RequirePackage{microtype}                      % Tweak typographics
