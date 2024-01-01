@@ -21,7 +21,7 @@ jobs:
         file resume.pdf | grep -q ' PDF '
 
     - name: Upload the PDFs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: PDF
         path: |
