@@ -1,6 +1,7 @@
 APAC
 biber
 bioconda
+bioinformatic
 Cheng
 Chheda
 Chuang
