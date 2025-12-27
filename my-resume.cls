@@ -19,7 +19,7 @@
 }
 
 % Define colors (xcolor)
-\RequirePackage[usenames,dvipsnames]{xcolor}
+\RequirePackage[dvipsnames]{xcolor}
 \definecolor{color-title}{gray}{0.10}   % theme color
 \definecolor{color-text}{gray}{0.10}    % light black
 \definecolor{color-detail}{gray}{0.40}  % dark gray
